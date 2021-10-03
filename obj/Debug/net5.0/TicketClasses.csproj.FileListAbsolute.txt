@@ -1,0 +1,5 @@
+C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\obj\Debug\net5.0\TicketClasses.csproj.AssemblyReference.cache
+C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\obj\Debug\net5.0\TicketClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\obj\Debug\net5.0\TicketClasses.AssemblyInfoInputs.cache
+C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\obj\Debug\net5.0\TicketClasses.AssemblyInfo.cs
+C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\obj\Debug\net5.0\TicketClasses.csproj.CoreCompileInputs.cache
