@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using NLog.Web;
 
 namespace TicketClasses
 {
@@ -11,6 +12,7 @@ namespace TicketClasses
             string choice;
             string one = "TicketID,Summary,Status,Priority,Submitter,Assigned,Watching";
             string two = "1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones";
+            NLog.Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
 
             Console.WriteLine("1) Output CSV records.");

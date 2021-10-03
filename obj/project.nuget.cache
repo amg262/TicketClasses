@@ -1,8 +1,31 @@
 {
   "version": 2,
-  "dgSpecHash": "DTNz0NFQLGhTCCQf8fPMSkce9H30+VQ8kzp3uACY/Nph8RY7uoalimGtmCrs8Pc6PPRlaGgG3eKwz0HL/klAog==",
+  "dgSpecHash": "cgVrRg2mE30fra1hTs7aY1chclawCiP+lqXfXAod4xHJgB+nmvYeYHEfoU83EQlirFGyUQdn7LYfsQOXYY3zOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Andy\\RiderProjects\\TicketClasses\\TicketClasses\\TicketClasses.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\nlog\\5.0.0-preview.2\\nlog.5.0.0-preview.2.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\nlog.web\\4.14.0\\nlog.web.4.14.0.nupkg.sha512",
+    "C:\\Users\\Andy\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NLog.Web 4.14.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NLog.Web",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
