@@ -26,7 +26,7 @@
 
         public override string ToString()
         {
-            return $"{TicketID},{Summary},{Status},{Priority},{Submitter},{Assigned},{Watching}";
+            return $"{TicketID},{Summary},{Status},{Priority},{Submitter},{Assigned},{Watching}\n";
         }
     }
 }

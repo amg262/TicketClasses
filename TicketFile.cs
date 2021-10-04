@@ -26,12 +26,12 @@ namespace TicketClasses
         {
             FilePath = filePath;
             this.TicketsList = ticketsList;
-            this.Reader = new StreamReader(FilePath);
-            this.Writer = new StreamWriter(FilePath, true);
         }
 
         public void WriteToFile(Ticket ticket)
         {
+            this.Writer = new StreamWriter(FilePath, true);
+
             if (!File.Exists(FilePath))
             {
                 Writer.WriteLine(Preset[0]);
@@ -45,6 +45,8 @@ namespace TicketClasses
 
         public void ReadFromFile()
         {
+            this.Reader = new StreamReader(FilePath);
+
             while (!Reader.EndOfStream)
             {
                 Console.WriteLine(Reader.ReadLine());
