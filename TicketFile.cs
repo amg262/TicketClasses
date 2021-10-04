@@ -9,9 +9,13 @@ namespace TicketClasses
     public class TicketFile : IDisposable
     {
         private static Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
-        
-        
-        
+
+        public List<string> Preset = new List<string>()
+        {
+            "TicketID,Summary,Status,Priority,Submitter,Assigned,Watching",
+            "1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones";
+        };
+
         public string FilePath { get; set; }
         public List<Ticket> TicketsList { get; set; }
         public StreamReader Reader { get; set; }
@@ -28,12 +32,11 @@ namespace TicketClasses
 
         public void WriteToFile()
         {
-            
             if (!File.Exists(FilePath))
             {
-                StreamWriter sw = new StreamWriter(file);
-                sw.WriteLine(one);
-                sw.WriteLine(two);
+                //StreamWriter sw = new StreamWriter(file);
+                Writer.WriteLine(Preset[0]);
+                Writer.WriteLine(Preset[1]);
 
                 foreach (var index in records)
                 {
@@ -50,9 +53,8 @@ namespace TicketClasses
 
                 sw.Close();
             }
-            
         }
-        
+
 
         public void Dispose()
         {
