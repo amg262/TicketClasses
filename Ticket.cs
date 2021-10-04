@@ -13,8 +13,7 @@
             Assigned = assigned;
             Watching = watching;
         }
-        
-        
+
 
         public string TicketID { get; set; }
         public string Summary { get; set; }
@@ -26,7 +25,7 @@
 
         public override string ToString()
         {
-            return $"{TicketID},{Summary},{Status},{Priority},{Submitter},{Assigned},{Watching}\n";
+            return $"{TicketID},{Summary},{Status},{Priority},{Submitter},{Assigned},{Watching}";
         }
     }
 }
