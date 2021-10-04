@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using NLog.Web;
 
@@ -6,8 +7,18 @@ namespace TicketClasses
 {
     class Program
     {
+        private List<Ticket> tickets = new List<Ticket>();
+
+        private string file = "ticket.csv";
+        private string choice;
+        NLog.Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+
+        
         static void Main(string[] args)
         {
+            
+            
+
             string file = "ticket.csv";
             string choice;
             string one = "TicketID,Summary,Status,Priority,Submitter,Assigned,Watching";
