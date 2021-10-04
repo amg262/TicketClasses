@@ -11,6 +11,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TicketClasses/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TicketClasses/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ticket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ticket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TicketFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1632754708743</updated>
       <workItem from="1632754720874" duration="108000" />
-      <workItem from="1633286409469" duration="4954000" />
+      <workItem from="1633286409469" duration="5353000" />
+      <workItem from="1633311197535" duration="1060000" />
     </task>
     <servers />
   </component>

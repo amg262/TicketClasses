@@ -13,6 +13,8 @@
             Assigned = assigned;
             Watching = watching;
         }
+        
+        
 
         public string TicketID { get; set; }
         public string Summary { get; set; }
