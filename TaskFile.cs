@@ -6,17 +6,17 @@ using NLog.Web;
 
 namespace TicketClasses
 {
-    public class TicketFile : IDisposable
+    public class TaskFile : IDisposable
     {
         private static Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
         public List<string> Preset = new()
         {
-            "TicketID,Summary,Status,Priority,Submitter,Assigned,Watching",
-            "1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones"
+            "TicketID,Summary,Status,Priority,Submitter,Assigned,Watching,ProjectName,DueDate",
+            $"1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones,Project One,{typeof(DateTime)}"
         };
 
-        public TicketFile(string filePath, List<Ticket> ticketsList = null)
+        public TaskFile(string filePath, List<Ticket> ticketsList = null)
         {
             FilePath = filePath;
             TicketsList = ticketsList;
