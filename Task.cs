@@ -1,9 +1,12 @@
-﻿namespace TicketClasses
+﻿using System;
+
+namespace TicketClasses
 {
-    public class Ticket
+    public class Task
     {
-        public Ticket(string ticketId = null, string summary = null, string status = null, string priority = null,
-            string submitter = null, string assigned = null, string watching = null, string severity = null)
+        public Task(string ticketId = null, string summary = null, string status = null, string priority = null,
+            string submitter = null, string assigned = null, string watching = null, string projectName = null,
+            DateTime dueDate = default)
         {
             TicketID = ticketId;
             Summary = summary;
@@ -12,10 +15,11 @@
             Submitter = submitter;
             Assigned = assigned;
             Watching = watching;
-            Severity = severity;
+            ProjectName = projectName;
+            DueDate = dueDate;
         }
 
-        public Ticket()
+        public Task()
         {
         }
 
@@ -26,12 +30,15 @@
         public string Submitter { get; set; }
         public string Assigned { get; set; }
         public string Watching { get; set; }
-        
-        public string Severity { get; set; }
+
+        public string ProjectName { get; set; }
+
+        public DateTime DueDate { get; set; }
 
         public override string ToString()
         {
-            return $"{TicketID},{Summary},{Status},{Priority},{Submitter},{Assigned},{Watching}";
+            return
+                $"{TicketID},{Summary},{Status},{Priority},{Submitter},{Assigned},{Watching}, {ProjectName}, {DueDate:f}";
         }
     }
 }
