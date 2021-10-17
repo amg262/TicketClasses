@@ -9,7 +9,12 @@ namespace TicketClasses
         private static void Main(string[] args)
         {
             var tickets = new List<Ticket>();
-            var csv = new TicketFile("ticket.csv");
+            var ticketCsv = new TicketFile("ticket.csv");
+            var bugCsv = new TicketFile("bug.csv");
+            var enhancementCsv = new TicketFile("enhancement.csv");
+            var taskCsv = new TicketFile("task.csv");
+
+
             string choice;
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
@@ -28,7 +33,7 @@ namespace TicketClasses
             {
                 if (choice == "1" || inputNum == 1)
                 {
-                    csv.ReadFromFile();
+                    ticketCsv.ReadFromFile();
                 }
 
                 if (choice == "2" || inputNum == 2)
@@ -74,7 +79,7 @@ namespace TicketClasses
                     var ticket = new Ticket(id, summary, status, priority, submitter, assigned, watching);
 
                     tickets.Add(ticket);
-                    csv.WriteToFile(ticket);
+                    ticketCsv.WriteToFile(ticket);
                 }
 
                 if (choice == "3" || inputNum == 3)
@@ -86,10 +91,6 @@ namespace TicketClasses
                 }
 
                 if (choice == "5" || inputNum == 5)
-                {
-                }
-
-                if (choice == "2")
                 {
                 }
             }
