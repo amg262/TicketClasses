@@ -4,9 +4,9 @@ using NLog.Web;
 
 namespace TicketClasses
 {
-    internal class Program
+    internal class Program2
     {
-        private static void Main(string[] args)
+        private static void Main2(string[] args)
         {
             var tickets = new List<Ticket>();
             var csv = new TicketFile("ticket.csv");
@@ -28,10 +28,31 @@ namespace TicketClasses
             {
                 if (choice == "1" || inputNum == 1)
                 {
-                    csv.ReadFromFile();
+                    
+                    
                 }
-
+                
                 if (choice == "2" || inputNum == 2)
+                {
+                    
+                }
+                
+                if (choice == "3" || inputNum == 3)
+                {
+                    
+                }
+                
+                if (choice == "4" || inputNum == 4)
+                {
+                    
+                }
+                
+                if (choice == "5" || inputNum == 5)
+                {
+                    
+                }
+                
+                if (choice == "2")
                 {
                     var record_str = "";
                     var rec_str = "";
@@ -76,21 +97,9 @@ namespace TicketClasses
                     tickets.Add(ticket);
                     csv.WriteToFile(ticket);
                 }
-
-                if (choice == "3" || inputNum == 3)
+                else
                 {
-                }
-
-                if (choice == "4" || inputNum == 4)
-                {
-                }
-
-                if (choice == "5" || inputNum == 5)
-                {
-                }
-
-                if (choice == "2")
-                {
+                    csv.ReadFromFile();
                 }
             }
             catch (Exception e)
