@@ -10,7 +10,7 @@ namespace TicketClasses
         {
             var tickets = new List<Ticket>();
             var enhancements = new List<Enhancement>();
-            var tasks = new List<Tasks>()
+            var tasks = new List<Tasks>();
             var ticketCsv = new TicketFile("ticket.csv");
             var bugCsv = new TicketFile("bug.csv");
             var enhancementCsv = new TicketFile("enhancement.csv");
