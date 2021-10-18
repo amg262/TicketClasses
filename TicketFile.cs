@@ -6,12 +6,6 @@ namespace TicketClasses
 {
     public abstract class TicketFileHandler
     {
-        public List<string> Preset = new()
-        {
-            "TicketId,Summary,Status,Priority,Submitter,Assigned,Watching",
-            "1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones"
-        };
-
         public TicketFileHandler(string filePath, List<Ticket> ticketsList = null)
         {
             FilePath = filePath;
@@ -50,18 +44,11 @@ namespace TicketClasses
 
     public class TicketFile : TicketFileHandler
     {
-        public List<string> Preset = new()
-        {
-            "TicketId,Summary,Status,Priority,Submitter,Assigned,Watching",
-            "1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones"
-        };
-
         public TicketFile(string filePath, List<Ticket> ticketsList = null) : base(filePath, ticketsList)
         {
             FilePath = filePath;
         }
-
-
+        
         public string FilePath { get; set; }
         public List<Ticket> TicketsList { get; set; }
         public StreamReader Reader { get; set; }
@@ -79,19 +66,12 @@ namespace TicketClasses
 
     public class EnhancementFile : TicketFileHandler
     {
-        public List<string> Preset = new()
-        {
-            "TicketId,Summary,Status,Priority,Submitter,Assigned,Watching,Software,Cost,Reason,Estimate",
-            "1,This is a enhancement ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones,Adobe Photoshop CC,99.99,We Need It, 10.00"
-        };
-
         public EnhancementFile(string filePath, List<Ticket> ticketsList = null) : base(filePath, ticketsList)
         {
             FilePath = filePath;
         }
 
         public string FilePath { get; set; }
-        public List<Ticket> TicketsList { get; set; }
         public StreamReader Reader { get; set; }
         public StreamWriter Writer { get; set; }
         public bool IsCreated { get; set; }
@@ -106,20 +86,12 @@ namespace TicketClasses
 
     public class TaskFile : TicketFileHandler
     {
-        public List<string> Preset = new()
-        {
-            "TicketId,Summary,Status,Priority,Submitter,Assigned,Watching,ProjectName,DueDate",
-            $"1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones,Project One,{typeof(DateTime)}"
-        };
-
-
         public TaskFile(string filePath, List<Ticket> ticketsList = null) : base(filePath, ticketsList)
         {
             FilePath = filePath;
         }
 
         public string FilePath { get; set; }
-        public List<Ticket> TicketsList { get; set; }
         public StreamReader Reader { get; set; }
         public StreamWriter Writer { get; set; }
         public bool IsCreated { get; set; }

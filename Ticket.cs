@@ -73,8 +73,7 @@ namespace TicketClasses
         public string Reason { get; set; }
 
         public double Estimate { get; set; }
-
-
+        
         public override string ToString()
         {
             return
