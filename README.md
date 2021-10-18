@@ -4,10 +4,9 @@ Q: Modify your Ticket system application to use appropriate classes and objects
 
 A: I ended up breaking it out to Program.cs, Ticket.cs, TicketFile.cs
 
-
 ### The TicketFile Object ### 
-Takes in a Ticket object and writes it to a file or
-read and outputs the file
+
+Takes in a Ticket object and writes it to a file or read and outputs the file
 
 ```c#
 public class TicketFile : IDisposable

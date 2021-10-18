@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using NLog;
 using NLog.Web;
 
 namespace TicketClasses
@@ -10,7 +7,7 @@ namespace TicketClasses
     {
         private static void Main(string[] args)
         {
-            Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
             Console.WriteLine("1) Output CSV records.");
             Console.WriteLine("2) Add CSV record. (Legacy code -> tickets.csv");
@@ -18,14 +15,14 @@ namespace TicketClasses
             Console.WriteLine("4) Enhancement");
             Console.WriteLine("5) Task");
 
-            Int32.TryParse(Console.ReadLine(), out int inputNum);
+            int.TryParse(Console.ReadLine(), out var inputNum);
 
             try
             {
                 if (inputNum == 1)
                 {
                     Console.WriteLine("(B)ugs  |  (E)nhancements  |  (T)asks");
-                    string key = Console.ReadLine().ToUpper();
+                    var key = Console.ReadLine().ToUpper();
 
                     if (key == "B")
                     {
@@ -103,19 +100,18 @@ namespace TicketClasses
                     var software = Console.ReadLine();
 
                     Console.Write("Cost>");
-                    Double.TryParse(Console.ReadLine(), out double cost);
+                    double.TryParse(Console.ReadLine(), out var cost);
 
                     Console.Write("Reason>");
                     var reason = Console.ReadLine();
-                    Console.Write("Estimate>");
 
-                    var estimate2 = Console.ReadLine();
-                    Double.TryParse(Console.ReadLine(), out double estimate);
+                    Console.Write("Estimate>");
+                    double.TryParse(Console.ReadLine(), out var estimate);
 
                     var enhancement = new Enhancement(software, cost, reason, estimate, id, summary, status,
                         priority, submitter, assigned, watching);
 
-                    EnhancementFile file = new EnhancementFile("enhancements.csv");
+                    var file = new EnhancementFile("enhancements.csv");
                     file.WriteToFile(enhancement);
                 }
 
@@ -127,17 +123,14 @@ namespace TicketClasses
                     Console.Write("Summary>");
                     var summary = Console.ReadLine();
 
-
                     Console.Write("Status>");
                     var status = Console.ReadLine();
-
 
                     Console.Write("Priority>");
                     var priority = Console.ReadLine();
 
                     Console.Write("Submitter>");
                     var submitter = Console.ReadLine();
-
 
                     Console.Write("Assigned>");
                     var assigned = Console.ReadLine();
@@ -149,12 +142,12 @@ namespace TicketClasses
                     var projectName = Console.ReadLine();
 
                     Console.Write("Due Date>");
-                    DateTime due = Convert.ToDateTime(Console.ReadLine());
+                    var due = Convert.ToDateTime(Console.ReadLine());
 
-                    Task task = new Task(projectName, due, id, summary, status, priority, submitter, assigned,
+                    var task = new Task(projectName, due, id, summary, status, priority, submitter, assigned,
                         watching);
 
-                    TaskFile file = new TaskFile("tasks.csv");
+                    var file = new TaskFile("tasks.csv");
                     file.WriteToFile(task);
                 }
             }
