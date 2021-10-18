@@ -18,8 +18,11 @@ namespace TicketClasses
         {
             FilePath = filePath;
             TicketsList = ticketsList;
+            count = 0;
         }
 
+
+        public UInt32 count { get; set; }
         public string FilePath { get; set; }
         public List<Ticket> TicketsList { get; set; }
         public StreamReader Reader { get; set; }
@@ -46,8 +49,13 @@ namespace TicketClasses
         {
             Reader = new StreamReader(FilePath);
 
-            while (!Reader.EndOfStream) Console.WriteLine(Reader.ReadLine());
+            while (!Reader.EndOfStream)
+            {
+                Console.WriteLine(Reader.ReadLine());
+                count++;
+            }
 
+            Console.WriteLine($"{count} Record(s) Found");
             Reader.Close();
         }
     }
@@ -83,17 +91,15 @@ namespace TicketClasses
                 Writer.WriteLine(Preset[1]);
             }
 
-            
+
             Writer.WriteLine(ticket.ToString());
 
             Writer.Close();
         }
-        
     }
 
     public class EnhancementFile : TicketFileHandler
     {
-   
         public List<string> Preset = new()
         {
             "TicketId,Summary,Status,Priority,Submitter,Assigned,Watching,Software,Cost,Reason,Estimate",
@@ -146,7 +152,7 @@ namespace TicketClasses
         public StreamReader Reader { get; set; }
         public StreamWriter Writer { get; set; }
         public bool IsCreated { get; set; }
-        
+
 
         public void WriteToFile(Task ticket)
         {

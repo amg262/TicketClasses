@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using NLog;
 using NLog.Web;
 
@@ -23,7 +24,24 @@ namespace TicketClasses
             {
                 if (inputNum == 1)
                 {
-                    //ticketCsv.ReadFromFile();
+                    Console.WriteLine("(B)ugs  |  (E)nhancements  |  (T)asks");
+                    string key = Console.ReadLine().ToUpper();
+
+                    if (key == "B")
+                    {
+                        TicketFileHandler file = new TicketFile("tickets.csv");
+                        file.ReadFromFile();
+                    }
+                    else if (key == "E")
+                    {
+                        TicketFileHandler file = new EnhancementFile("enhancements.csv");
+                        file.ReadFromFile();
+                    }
+                    else if (key == "T")
+                    {
+                        TicketFileHandler file = new TaskFile("tasks.csv");
+                        file.ReadFromFile();
+                    }
                 }
 
 
@@ -131,7 +149,7 @@ namespace TicketClasses
                     Task task = new Task(projectName, due, id, summary, status, priority, submitter, assigned,
                         watching);
 
-                    TaskFile file = new TaskFile("task.csv");
+                    TaskFile file = new TaskFile("tasks.csv");
                     file.WriteToFile(task);
                 }
             }

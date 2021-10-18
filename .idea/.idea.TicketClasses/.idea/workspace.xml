@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/TicketFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TicketFile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.pdb" afterDir="false" />
     </list>
@@ -84,7 +83,7 @@
       <workItem from="1633314544047" duration="841000" />
       <workItem from="1633455731607" duration="1287000" />
       <workItem from="1634085868734" duration="1217000" />
-      <workItem from="1634485964881" duration="6392000" />
+      <workItem from="1634485964881" duration="6888000" />
     </task>
     <servers />
   </component>
