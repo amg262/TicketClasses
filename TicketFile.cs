@@ -101,6 +101,7 @@ namespace TicketClasses
 
         public EnhancementFile(string filePath, List<Ticket> ticketsList = null) : base(filePath, ticketsList)
         {
+            FilePath = filePath;
         }
 
         public string FilePath { get; set; }

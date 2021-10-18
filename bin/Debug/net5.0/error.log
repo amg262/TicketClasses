@@ -1,0 +1,10 @@
+2021-10-17 20:03:43.9727|ERROR|TicketClasses.Program|System.ArgumentNullException: Value cannot be null. (Parameter 'path')
+   at System.IO.StreamWriter.ValidateArgsAndOpenPath(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at TicketClasses.TicketFile.WriteToFile(Ticket ticket) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\TicketFile.cs:line 77
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 83
+2021-10-17 20:08:17.2063|ERROR|TicketClasses.Program|System.ArgumentNullException: Value cannot be null. (Parameter 'path')
+   at System.IO.StreamWriter.ValidateArgsAndOpenPath(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at TicketClasses.EnhancementFile.WriteToFile(Enhancement ticket) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\TicketFile.cs:line 114
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 149
