@@ -13,7 +13,7 @@ namespace TicketClasses
             Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
             Console.WriteLine("1) Output CSV records.");
-            Console.WriteLine("2) Add CSV record.");
+            Console.WriteLine("2) Add CSV record. (Legacy code -> tickets.csv");
             Console.WriteLine("3) Bug/Defect");
             Console.WriteLine("4) Enhancement");
             Console.WriteLine("5) Task");
@@ -68,7 +68,12 @@ namespace TicketClasses
                     Console.Write("Watching>");
                     var watching = Console.ReadLine();
 
-                    var ticket = new Bug(id, summary, status, priority, submitter, assigned, watching);
+                    Console.Write("Severity>");
+                    var severity = Console.ReadLine();
+
+                    var ticket = new Bug(severity, id, summary, status, priority, submitter, assigned, watching);
+                    TicketFileHandler file = new TicketFile("tickets.csv");
+                    file.WriteToFile(ticket);
                 }
 
                 if (inputNum == 4)
