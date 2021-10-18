@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using NLog;
 using NLog.Web;
 
 namespace TicketClasses
@@ -8,16 +9,7 @@ namespace TicketClasses
     {
         private static void Main(string[] args)
         {
-            // var tickets = new List<Ticket>();
-            // var ticketCsv = new TicketFile("ticket.csv");
-            // var bugCsv = new TicketFile("bug.csv");
-            // var enhancementCsv = new TicketFile("enhancement.csv");
-            // var taskCsv = new TicketFile("task.csv");
-
-
-            string choice;
-            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
-
+            Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
             Console.WriteLine("1) Output CSV records.");
             Console.WriteLine("2) Add CSV record.");
@@ -25,132 +17,122 @@ namespace TicketClasses
             Console.WriteLine("4) Enhancement");
             Console.WriteLine("5) Task");
 
-            choice = Console.ReadLine();
             Int32.TryParse(Console.ReadLine(), out int inputNum);
-            var stream = "";
 
             try
             {
-                if (choice == "1" || inputNum == 1)
+                if (inputNum == 1)
                 {
                     //ticketCsv.ReadFromFile();
                 }
 
 
-                if (choice == "2" || inputNum == 2 | choice == "3" || inputNum == 3)
+                if (inputNum == 2 || inputNum == 3)
                 {
-                    var record_str = "";
-                    var rec_str = "";
-                    var records = new string[7];
-
-
                     Console.Write("Ticket ID>");
                     var id = Console.ReadLine();
-                    records[0] = id;
 
                     Console.Write("Summary>");
                     var summary = Console.ReadLine();
-                    records[1] = summary;
-
 
                     Console.Write("Status>");
                     var status = Console.ReadLine();
-                    records[2] = status;
-
 
                     Console.Write("Priority>");
                     var priority = Console.ReadLine();
-                    records[3] = priority;
-
 
                     Console.Write("Submitter>");
                     var submitter = Console.ReadLine();
-                    records[4] = submitter;
-
 
                     Console.Write("Assigned>");
                     var assigned = Console.ReadLine();
-                    records[5] = assigned;
-
 
                     Console.Write("Watching>");
                     var watching = Console.ReadLine();
-                    records[6] = watching;
 
                     var ticket = new Bug(id, summary, status, priority, submitter, assigned, watching);
                 }
 
-                if (choice == "4" || inputNum == 4)
+                if (inputNum == 4)
                 {
-                    var record_str = "";
-                    var rec_str = "";
-                    var records = new string[7];
-
-
                     Console.Write("Ticket ID>");
                     var id = Console.ReadLine();
-                    records[0] = id;
 
                     Console.Write("Summary>");
                     var summary = Console.ReadLine();
-                    records[1] = summary;
-
 
                     Console.Write("Status>");
                     var status = Console.ReadLine();
-                    records[2] = status;
-
 
                     Console.Write("Priority>");
                     var priority = Console.ReadLine();
-                    records[3] = priority;
-
 
                     Console.Write("Submitter>");
                     var submitter = Console.ReadLine();
-                    records[4] = submitter;
-
 
                     Console.Write("Assigned>");
                     var assigned = Console.ReadLine();
-                    records[5] = assigned;
-
 
                     Console.Write("Watching>");
                     var watching = Console.ReadLine();
-                    records[6] = watching;
 
                     Console.Write("Software>");
                     var software = Console.ReadLine();
-                    records[6] = software;
 
                     Console.Write("Cost>");
-                    var cost2 = Console.ReadLine();
                     Double.TryParse(Console.ReadLine(), out double cost);
-                    //records[6] = cost;
 
                     Console.Write("Reason>");
                     var reason = Console.ReadLine();
-                    records[6] = reason;
-
                     Console.Write("Estimate>");
+
                     var estimate2 = Console.ReadLine();
                     Double.TryParse(Console.ReadLine(), out double estimate);
-                    //records[6] = estimate;
-
 
                     var enhancement = new Enhancement(software, cost, reason, estimate, id, summary, status,
                         priority, submitter, assigned, watching);
 
-                    // tickets.Add(enhancement);
-
                     EnhancementFile file = new EnhancementFile("enhancements.csv");
-
                     file.WriteToFile(enhancement);
                 }
 
-                if (choice == "5" || inputNum == 5)
+                if (inputNum == 5)
                 {
+                    Console.Write("Ticket ID>");
+                    var id = Console.ReadLine();
+
+                    Console.Write("Summary>");
+                    var summary = Console.ReadLine();
+
+
+                    Console.Write("Status>");
+                    var status = Console.ReadLine();
+
+
+                    Console.Write("Priority>");
+                    var priority = Console.ReadLine();
+
+                    Console.Write("Submitter>");
+                    var submitter = Console.ReadLine();
+
+
+                    Console.Write("Assigned>");
+                    var assigned = Console.ReadLine();
+
+                    Console.Write("Watching>");
+                    var watching = Console.ReadLine();
+
+                    Console.Write("Project Name>");
+                    var projectName = Console.ReadLine();
+
+                    Console.Write("Due Date>");
+                    DateTime due = Convert.ToDateTime(Console.ReadLine());
+
+                    Task task = new Task(projectName, due, id, summary, status, priority, submitter, assigned,
+                        watching);
+
+                    TaskFile file = new TaskFile("task.csv");
+                    file.WriteToFile(task);
                 }
             }
             catch (Exception e)

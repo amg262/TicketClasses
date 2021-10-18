@@ -62,6 +62,7 @@ namespace TicketClasses
 
         public TicketFile(string filePath, List<Ticket> ticketsList = null) : base(filePath, ticketsList)
         {
+            FilePath = filePath;
         }
 
 
@@ -137,6 +138,7 @@ namespace TicketClasses
 
         public TaskFile(string filePath, List<Ticket> ticketsList = null) : base(filePath, ticketsList)
         {
+            FilePath = filePath;
         }
 
         public string FilePath { get; set; }
