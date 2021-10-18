@@ -38,11 +38,11 @@ namespace TicketClasses
         {
             Writer = new StreamWriter(FilePath, true);
 
-            // if (!File.Exists(FilePath))
-            // {
-            //     Writer.WriteLine(Preset[0]);
-            //     Writer.WriteLine(Preset[1]);
-            // }
+            if (!File.Exists(FilePath))
+            {
+                Writer.WriteLine(Preset[0]);
+                Writer.WriteLine(Preset[1]);
+            }
 
             Writer.WriteLine(ticket.ToString());
 
