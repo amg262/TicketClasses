@@ -16,6 +16,8 @@ namespace TicketClasses
         public uint count { get; set; }
         public string FilePath { get; set; }
         public List<Ticket> TicketsList { get; set; }
+        
+        public List<string> RecordList { get; set; }
         public StreamReader Reader { get; set; }
         public StreamWriter Writer { get; set; }
         public bool IsCreated { get; set; }
@@ -24,6 +26,7 @@ namespace TicketClasses
         {
             Writer = new StreamWriter(FilePath, true);
             Writer.WriteLine(ticket.ToString());
+            TicketsList.Add(ticket);
             Writer.Close();
         }
 
@@ -34,6 +37,9 @@ namespace TicketClasses
             while (!Reader.EndOfStream)
             {
                 Console.WriteLine(Reader.ReadLine());
+                string t = Reader.ReadLine();
+                //RecordList.Add(Reader.ReadLine());
+                
                 count++;
             }
 

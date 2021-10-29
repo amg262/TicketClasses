@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Channels;
 using NLog.Web;
 
 namespace TicketClasses
@@ -14,6 +15,7 @@ namespace TicketClasses
             Console.WriteLine("3) Bug/Defect");
             Console.WriteLine("4) Enhancement");
             Console.WriteLine("5) Task");
+            Console.WriteLine($"6) Search");
 
             int.TryParse(Console.ReadLine(), out var inputNum);
 
@@ -149,6 +151,22 @@ namespace TicketClasses
 
                     var file = new TaskFile("tasks.csv");
                     file.WriteToFile(task);
+                } else if (inputNum == 6)
+                {
+                   
+                        TicketFileHandler ticketsFile = new TicketFile("tickets.csv");
+                        ticketsFile.ReadFromFile();
+
+                        Console.WriteLine(ticketsFile.TicketsList);
+                        //Console.WriteLine(ticketsFile.TicketsList);
+
+                        // TicketFileHandler eFile = new EnhancementFile("enhancements.csv");
+                        // eFile.ReadFromFile();
+                        //
+                        //
+                        // TicketFileHandler tFile = new TaskFile("tasks.csv");
+                        // tFile.ReadFromFile();
+                    
                 }
             }
             catch (Exception e)
