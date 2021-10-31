@@ -37,8 +37,9 @@ namespace TicketClasses
 
     public class Bug : Ticket
     {
-        public Bug(string severity, string ticketId = null, string summary = null, string status = null,
-            string priority = null, string submitter = null, string assigned = null, string watching = null) : base(
+        public Bug(string ticketId = null, string summary = null, string status = null,
+            string priority = null, string submitter = null, string assigned = null, string watching = null,
+            string severity = null) : base(
             ticketId, summary, status, priority, submitter, assigned, watching)
         {
             Severity = severity;
@@ -55,9 +56,10 @@ namespace TicketClasses
 
     public class Enhancement : Ticket
     {
-        public Enhancement(string software, double cost, string reason, double estimate, string ticketId = null,
+        public Enhancement(string ticketId = null,
             string summary = null, string status = null, string priority = null, string submitter = null,
-            string assigned = null, string watching = null) : base(ticketId, summary, status, priority, submitter,
+            string assigned = null, string watching = null, string software = null, double cost = default,
+            string reason = null, double estimate = default) : base(ticketId, summary, status, priority, submitter,
             assigned, watching)
         {
             Software = software;
@@ -73,7 +75,7 @@ namespace TicketClasses
         public string Reason { get; set; }
 
         public double Estimate { get; set; }
-        
+
         public override string ToString()
         {
             return
@@ -83,9 +85,11 @@ namespace TicketClasses
 
     public class Task : Ticket
     {
-        public Task(string projectName, DateTime dueDate, string ticketId = null, string summary = null,
+        public Task(string ticketId = null, string summary = null,
             string status = null, string priority = null, string submitter = null, string assigned = null,
-            string watching = null) : base(ticketId, summary, status, priority, submitter, assigned, watching)
+            string watching = null,
+            string projectName = null, DateTime dueDate = default
+        ) : base(ticketId, summary, status, priority, submitter, assigned, watching)
         {
             ProjectName = projectName;
             DueDate = dueDate;

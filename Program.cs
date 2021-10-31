@@ -14,11 +14,16 @@ namespace TicketClasses
             Console.WriteLine("3) Bug/Defect");
             Console.WriteLine("4) Enhancement");
             Console.WriteLine("5) Task");
+            Console.WriteLine("6) Search");
 
             int.TryParse(Console.ReadLine(), out var inputNum);
 
             try
             {
+                if (inputNum == 6)
+                {
+                }
+
                 if (inputNum == 1)
                 {
                     Console.WriteLine("(B)ugs  |  (E)nhancements  |  (T)asks");
@@ -68,7 +73,7 @@ namespace TicketClasses
                     Console.Write("Severity>");
                     var severity = Console.ReadLine();
 
-                    var ticket = new Bug(severity, id, summary, status, priority, submitter, assigned, watching);
+                    var ticket = new Bug(id, summary, status, priority, submitter, assigned, watching, severity);
                     TicketFileHandler file = new TicketFile("tickets.csv");
                     file.WriteToFile(ticket);
                 }
@@ -108,8 +113,8 @@ namespace TicketClasses
                     Console.Write("Estimate>");
                     double.TryParse(Console.ReadLine(), out var estimate);
 
-                    var enhancement = new Enhancement(software, cost, reason, estimate, id, summary, status,
-                        priority, submitter, assigned, watching);
+                    var enhancement = new Enhancement(id, summary, status, priority, submitter, assigned, watching,
+                        software, cost, reason, estimate);
 
                     var file = new EnhancementFile("enhancements.csv");
                     file.WriteToFile(enhancement);
@@ -144,8 +149,8 @@ namespace TicketClasses
                     Console.Write("Due Date>");
                     var due = Convert.ToDateTime(Console.ReadLine());
 
-                    var task = new Task(projectName, due, id, summary, status, priority, submitter, assigned,
-                        watching);
+                    var task = new Task(id, summary, status, priority, submitter, assigned, 
+                        watching, projectName, due);
 
                     var file = new TaskFile("tasks.csv");
                     file.WriteToFile(task);
