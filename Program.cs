@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using NLog.Web;
 
 namespace TicketClasses
 {
     internal class Program
     {
+        public List<Ticket> TicketsList { get; set; }
+
+        public static List<string> CsvRecords { get; set; }
+
+        public static string[] CsvRecordSplit { get; set; }
+
         private static void Main(string[] args)
         {
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
@@ -24,11 +31,37 @@ namespace TicketClasses
                 if (inputNum == 6)
                 {
                     EnhancementFile eFile = new EnhancementFile("enhancements.csv");
-                    List<Ticket> enh = eFile.ReadFromFile();
+                    List<Ticket> enh = eFile.ReadFromFile2();
 
-                    Console.WriteLine(enh);
                     
+                    
+                    // List<Ticket> TicketsList = new List<Ticket>();
+                    // StreamReader Reader = new StreamReader("enhancements.csv");
+                    //
+                    //
+                    // int i = 0;
+                    // while (!Reader.EndOfStream)
+                    // {
+                    //
+                    //     Reader.ReadLine();
+                    //Console.WriteLine(Reader.ReadLine());
+                    //CsvRecords.Add(Reader.ReadLine());
+                    // CsvRecordSplit = CsvRecords[i].Split(",");
+                    // Enhancement t = new Enhancement(CsvRecordSplit[0], CsvRecordSplit[1], CsvRecordSplit[2],
+                    //     CsvRecordSplit[3],
+                    //     CsvRecordSplit[4], CsvRecordSplit[5], CsvRecordSplit[6], CsvRecordSplit[7],
+                    //     Convert.ToDouble(CsvRecordSplit[8]), CsvRecordSplit[7],
+                    //     Convert.ToDouble(CsvRecordSplit[8]));
+                    //TicketsList.Add(t);
+
+
+
+
+                    //
+                    // Console.WriteLine($"{CsvRecords.Count}");
+                    // Reader.Close();
                 }
+
 
                 if (inputNum == 1)
                 {
@@ -42,7 +75,7 @@ namespace TicketClasses
                     }
                     else if (key == "E")
                     {
-                        TicketFileHandler file = new EnhancementFile("enhancements.csv");
+                        EnhancementFile file = new EnhancementFile("enhancements.csv");
                         file.ReadFromFile();
                     }
                     else if (key == "T")
@@ -155,7 +188,7 @@ namespace TicketClasses
                     Console.Write("Due Date>");
                     var due = Convert.ToDateTime(Console.ReadLine());
 
-                    var task = new Task(id, summary, status, priority, submitter, assigned, 
+                    var task = new Task(id, summary, status, priority, submitter, assigned,
                         watching, projectName, due);
 
                     var file = new TaskFile("tasks.csv");

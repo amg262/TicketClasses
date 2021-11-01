@@ -22,3 +22,18 @@ File name: 'C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\bin\Debug\ne
    at System.IO.StreamReader..ctor(String path)
    at TicketClasses.TicketFileHandler.ReadFromFile() in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\TicketFile.cs:line 50
    at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 43
+2021-11-01 08:09:59.9318|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.EnhancementFile.ReadFromFile() in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\TicketFile.cs:line 125
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 27
+2021-11-01 08:44:18.6989|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 44
+2021-11-01 08:44:48.8668|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 44
+2021-11-01 08:45:29.6471|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 44
+2021-11-01 08:45:53.1179|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 44
+2021-11-01 08:46:58.2226|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 44
+2021-11-01 08:47:42.5194|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 59
