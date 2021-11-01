@@ -7,8 +7,6 @@
     <list default="true" id="820c1bcb-35bb-4757-b526-d0f06513d94d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TicketClasses/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TicketClasses/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ticket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ticket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TicketFile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

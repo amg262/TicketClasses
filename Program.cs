@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using NLog.Web;
 
 namespace TicketClasses
@@ -22,6 +23,11 @@ namespace TicketClasses
             {
                 if (inputNum == 6)
                 {
+                    EnhancementFile eFile = new EnhancementFile("enhancements.csv");
+                    List<Ticket> enh = eFile.ReadFromFile();
+
+                    Console.WriteLine(enh);
+                    
                 }
 
                 if (inputNum == 1)
