@@ -26,6 +26,52 @@ namespace TicketClasses
 
             int.TryParse(Console.ReadLine(), out var inputNum);
 
+            string[] csvRaw = null;
+            string line;
+            List<string> list = new List<string>();
+
+            List<Bug> bugs = new List<Bug>();
+            StreamReader reader = new StreamReader("ticket.csv");
+
+            while (!reader.EndOfStream)
+            {
+
+                line = reader.ReadLine();
+                csvRaw = line.Split(",");
+
+                Console.WriteLine(csvRaw[1]);
+                
+                Bug b = new Bug();
+
+                b.TicketId = csvRaw[0];
+                b.Summary = csvRaw[1];
+                b.Status = csvRaw[2];
+                b.Priority = csvRaw[3];
+                b.Submitter = csvRaw[4];
+                b.Assigned = csvRaw[5];
+                b.Watching = csvRaw[6];
+                
+                bugs.Add(b);
+            }
+
+
+            foreach (var bb in bugs)
+            {
+                Console.WriteLine(bb.ToString());
+            }
+            // Bug b = new Bug();
+            //
+            // b.TicketId = csvRaw[0];
+            // b.Summary = csvRaw[1];
+            // b.Status = csvRaw[2];
+            // b.Priority = csvRaw[3];
+            // b.Submitter = csvRaw[4];
+            // b.Assigned = csvRaw[5];
+            // b.Watching = csvRaw[6];
+
+
+            /*
+            
             try
             {
                 if (inputNum == 6)
@@ -201,6 +247,7 @@ namespace TicketClasses
                 Console.WriteLine(e);
                 throw;
             }
+            */
         }
     }
 }
