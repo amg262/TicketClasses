@@ -10,9 +10,12 @@
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/TicketClasses.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/TicketClasses.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/TicketClasses.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ticket.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ticket.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enhancements.csv" beforeDir="false" afterPath="$PROJECT_DIR$/enhancements.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/TicketClasses.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/TicketClasses.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/TicketClasses.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.csv" beforeDir="false" afterPath="$PROJECT_DIR$/task.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +87,7 @@
       <workItem from="1633455731607" duration="1287000" />
       <workItem from="1634085868734" duration="1217000" />
       <workItem from="1634485964881" duration="8196000" />
-      <workItem from="1635809170868" duration="925000" />
+      <workItem from="1635809170868" duration="1601000" />
     </task>
     <servers />
   </component>

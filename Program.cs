@@ -18,21 +18,33 @@ namespace TicketClasses
         {
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
-            Console.WriteLine("1) Output CSV records.");
-            Console.WriteLine("2) Add CSV record. (Legacy code -> tickets.csv");
-            Console.WriteLine("3) Bug/Defect");
-            Console.WriteLine("4) Enhancement");
-            Console.WriteLine("5) Task");
-            Console.WriteLine("6) Search");
+            // Console.WriteLine("1) Output CSV records.");
+            // Console.WriteLine("2) Add CSV record. (Legacy code -> tickets.csv");
+            // Console.WriteLine("3) Bug/Defect");
+            // Console.WriteLine("4) Enhancement");
+            // Console.WriteLine("5) Task");
+            // Console.WriteLine("6) Search");
 
+            Console.WriteLine("Search Query: ");
+            string query = Console.ReadLine();
+            
             int.TryParse(Console.ReadLine(), out var inputNum);
 
             string[] csvRaw = null;
+            string[] csvRaw2 = null;
+            string[] csvRaw3 = null;
+
+            string line2;
+            string line3;
             string line;
             List<string> list = new List<string>();
 
             List<Bug> bugs = new List<Bug>();
+            List<Task> tasks = new List<Task>();
+            List<Enhancement> enhance = new List<Enhancement>();
             StreamReader reader = new StreamReader("ticket.csv");
+            StreamReader reader2 = new StreamReader("task.csv");
+            StreamReader reader3 = new StreamReader("enhancements.csv");
 
             while (!reader.EndOfStream)
             {
@@ -55,9 +67,68 @@ namespace TicketClasses
                 bugs.Add(b);
             }
 
-            var bbbs = bugs.Where(m => m.Status.Contains("CLOSED"));
+            while (!reader2.EndOfStream)
+            {
+
+                line2 = reader2.ReadLine();
+                csvRaw2 = line2.Split(",");
+
+                //Console.WriteLine(csvRaw[1]);
+                
+                Task t = new Task();
+
+                t.TicketId = csvRaw2[0];
+                t.Summary = csvRaw2[1];
+                t.Status = csvRaw2[2];
+                t.Priority = csvRaw2[3];
+                t.Submitter = csvRaw2[4];
+                t.Assigned = csvRaw2[5];
+                t.Watching = csvRaw2[6];
+                
+                tasks.Add(t);
+            }
+            
+            
+            while (!reader3.EndOfStream)
+            {
+
+                line3 = reader3.ReadLine();
+                csvRaw3 = line3.Split(",");
+
+                //Console.WriteLine(csvRaw[1]);
+                
+                Enhancement e = new Enhancement();
+
+                e.TicketId = csvRaw3[0];
+                e.Summary = csvRaw3[1];
+                e.Status = csvRaw3[2];
+                e.Priority = csvRaw3[3];
+                e.Submitter = csvRaw3[4];
+                e.Assigned = csvRaw3[5];
+                e.Watching = csvRaw3[6];
+                
+                enhance.Add(e);
+            }
+            
+            reader.Close();
+            reader2.Close();
+            reader3.Close();
+
+            var bbbs = bugs.Where(m => m.TicketId.Contains(query));
+            var bbbs2 = tasks.Where(m => m.TicketId.Contains(query));
+            var bbbs3 = enhance.Where(m => m.TicketId.Contains(query));
 
             foreach (var a in bbbs)
+            {
+                Console.WriteLine(a.ToString());
+            }
+            
+            foreach (var a in bbbs2)
+            {
+                Console.WriteLine(a.ToString());
+            }
+            
+            foreach (var a in bbbs3)
             {
                 Console.WriteLine(a.ToString());
             }
