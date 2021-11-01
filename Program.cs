@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using NLog.Web;
 
 namespace TicketClasses
@@ -39,7 +40,7 @@ namespace TicketClasses
                 line = reader.ReadLine();
                 csvRaw = line.Split(",");
 
-                Console.WriteLine(csvRaw[1]);
+                //Console.WriteLine(csvRaw[1]);
                 
                 Bug b = new Bug();
 
@@ -54,10 +55,17 @@ namespace TicketClasses
                 bugs.Add(b);
             }
 
+            var bbbs = bugs.Where(m => m.Status.Contains("CLOSED"));
+
+            foreach (var a in bbbs)
+            {
+                Console.WriteLine(a.ToString());
+            }
+
 
             foreach (var bb in bugs)
             {
-                Console.WriteLine(bb.ToString());
+                //Console.WriteLine(bb.ToString());
             }
             // Bug b = new Bug();
             //
