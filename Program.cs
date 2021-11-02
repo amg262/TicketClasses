@@ -114,24 +114,41 @@ namespace TicketClasses
             reader2.Close();
             reader3.Close();
 
-            var bbbs = bugs.Where(m => m.TicketId.Contains(query));
-            var bbbs2 = tasks.Where(m => m.TicketId.Contains(query));
-            var bbbs3 = enhance.Where(m => m.TicketId.Contains(query));
+            List<Ticket> tix = new List<Ticket>();
 
-            foreach (var a in bbbs)
+            foreach (var bug in bugs.Where(m => m.TicketId.Contains(query))) tix.Add(bug);
+            foreach (var bug in bugs.Where(m => m.Summary.Contains(query))) tix.Add(bug);
+            foreach (var bug in bugs.Where(m => m.Status.Contains(query))) tix.Add(bug);
+            foreach (var bug in bugs.Where(m => m.Priority.Contains(query))) tix.Add(bug);
+            foreach (var bug in bugs.Where(m => m.Submitter.Contains(query))) tix.Add( bug);
+            foreach (var bug in bugs.Where(m => m.Assigned.Contains(query))) tix.Add(bug);
+            foreach (var bug in bugs.Where(m => m.Watching.Contains(query))) tix.Add(bug);
+            foreach (var task in tasks.Where(m => m.TicketId.Contains(query))) tix.Add(task);
+            foreach (var enhancement in enhance.Where(m => m.TicketId.Contains(query))) tix.Add(enhancement);
+            // var bugSearch = bugs.Where(m => m.TicketId.Contains(query));
+            // var bugSearch = bugs.Where(m => m.Summary.Contains(query));
+            // var bugSearch = bugs.Where(m => m.Status.Contains(query));
+            // var bugSearch = bugs.Where(m => m.Priority.Contains(query));
+            // var bugSearch = bugs.Where(m => m.Submitter.Contains(query));
+            // var bugSearch = bugs.Where(m => m.Assigned.Contains(query));
+            // var bugSearch = bugs.Where(m => m.Watching.Contains(query));
+            // var taskSearch = tasks.Where(m => m.TicketId.Contains(query));
+            // var enhanceSearch = enhance.Where(m => m.TicketId.Contains(query));
+
+            foreach (var a in tix)
             {
+
                 Console.WriteLine(a.ToString());
             }
-            
-            foreach (var a in bbbs2)
-            {
-                Console.WriteLine(a.ToString());
-            }
-            
-            foreach (var a in bbbs3)
-            {
-                Console.WriteLine(a.ToString());
-            }
+            // foreach (var a in taskSearch)
+            // {
+            //     Console.WriteLine(a.ToString());
+            // }
+            //
+            // foreach (var a in enhanceSearch)
+            // {
+            //     Console.WriteLine(a.ToString());
+            // }
 
 
             foreach (var bb in bugs)
