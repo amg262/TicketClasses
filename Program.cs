@@ -18,16 +18,16 @@ namespace TicketClasses
         {
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
-            // Console.WriteLine("1) Output CSV records.");
-            // Console.WriteLine("2) Add CSV record. (Legacy code -> tickets.csv");
-            // Console.WriteLine("3) Bug/Defect");
-            // Console.WriteLine("4) Enhancement");
-            // Console.WriteLine("5) Task");
-            // Console.WriteLine("6) Search");
+            Console.WriteLine("1) Output CSV records.");
+            Console.WriteLine("2) Add CSV record. (Legacy code -> tickets.csv");
+            Console.WriteLine("3) Bug/Defect");
+            Console.WriteLine("4) Enhancement");
+            Console.WriteLine("5) Task");
+            Console.WriteLine("6) Search");
 
             Console.WriteLine("Search Query: ");
             string query = Console.ReadLine();
-            
+
             int.TryParse(Console.ReadLine(), out var inputNum);
 
             string[] csvRaw = null;
@@ -46,165 +46,9 @@ namespace TicketClasses
             StreamReader reader2 = new StreamReader("task.csv");
             StreamReader reader3 = new StreamReader("enhancements.csv");
 
-            while (!reader.EndOfStream)
-            {
 
-                line = reader.ReadLine();
-                csvRaw = line.Split(",");
-
-                //Console.WriteLine(csvRaw[1]);
-                
-                Bug b = new Bug();
-
-                b.TicketId = csvRaw[0];
-                b.Summary = csvRaw[1];
-                b.Status = csvRaw[2];
-                b.Priority = csvRaw[3];
-                b.Submitter = csvRaw[4];
-                b.Assigned = csvRaw[5];
-                b.Watching = csvRaw[6];
-                
-                bugs.Add(b);
-            }
-
-            while (!reader2.EndOfStream)
-            {
-
-                line2 = reader2.ReadLine();
-                csvRaw2 = line2.Split(",");
-
-                //Console.WriteLine(csvRaw[1]);
-                
-                Task t = new Task();
-
-                t.TicketId = csvRaw2[0];
-                t.Summary = csvRaw2[1];
-                t.Status = csvRaw2[2];
-                t.Priority = csvRaw2[3];
-                t.Submitter = csvRaw2[4];
-                t.Assigned = csvRaw2[5];
-                t.Watching = csvRaw2[6];
-                
-                tasks.Add(t);
-            }
-            
-            
-            while (!reader3.EndOfStream)
-            {
-
-                line3 = reader3.ReadLine();
-                csvRaw3 = line3.Split(",");
-
-                //Console.WriteLine(csvRaw[1]);
-                
-                Enhancement e = new Enhancement();
-
-                e.TicketId = csvRaw3[0];
-                e.Summary = csvRaw3[1];
-                e.Status = csvRaw3[2];
-                e.Priority = csvRaw3[3];
-                e.Submitter = csvRaw3[4];
-                e.Assigned = csvRaw3[5];
-                e.Watching = csvRaw3[6];
-                
-                enhance.Add(e);
-            }
-            
-            reader.Close();
-            reader2.Close();
-            reader3.Close();
-
-            List<Ticket> tix = new List<Ticket>();
-
-            foreach (var bug in bugs.Where(m => m.TicketId.Contains(query))) tix.Add(bug);
-            foreach (var bug in bugs.Where(m => m.Summary.Contains(query))) tix.Add(bug);
-            foreach (var bug in bugs.Where(m => m.Status.Contains(query))) tix.Add(bug);
-            foreach (var bug in bugs.Where(m => m.Priority.Contains(query))) tix.Add(bug);
-            foreach (var bug in bugs.Where(m => m.Submitter.Contains(query))) tix.Add( bug);
-            foreach (var bug in bugs.Where(m => m.Assigned.Contains(query))) tix.Add(bug);
-            foreach (var bug in bugs.Where(m => m.Watching.Contains(query))) tix.Add(bug);
-            foreach (var task in tasks.Where(m => m.TicketId.Contains(query))) tix.Add(task);
-            foreach (var enhancement in enhance.Where(m => m.TicketId.Contains(query))) tix.Add(enhancement);
-            // var bugSearch = bugs.Where(m => m.TicketId.Contains(query));
-            // var bugSearch = bugs.Where(m => m.Summary.Contains(query));
-            // var bugSearch = bugs.Where(m => m.Status.Contains(query));
-            // var bugSearch = bugs.Where(m => m.Priority.Contains(query));
-            // var bugSearch = bugs.Where(m => m.Submitter.Contains(query));
-            // var bugSearch = bugs.Where(m => m.Assigned.Contains(query));
-            // var bugSearch = bugs.Where(m => m.Watching.Contains(query));
-            // var taskSearch = tasks.Where(m => m.TicketId.Contains(query));
-            // var enhanceSearch = enhance.Where(m => m.TicketId.Contains(query));
-
-            foreach (var a in tix)
-            {
-
-                Console.WriteLine(a.ToString());
-            }
-            // foreach (var a in taskSearch)
-            // {
-            //     Console.WriteLine(a.ToString());
-            // }
-            //
-            // foreach (var a in enhanceSearch)
-            // {
-            //     Console.WriteLine(a.ToString());
-            // }
-
-
-            foreach (var bb in bugs)
-            {
-                //Console.WriteLine(bb.ToString());
-            }
-            // Bug b = new Bug();
-            //
-            // b.TicketId = csvRaw[0];
-            // b.Summary = csvRaw[1];
-            // b.Status = csvRaw[2];
-            // b.Priority = csvRaw[3];
-            // b.Submitter = csvRaw[4];
-            // b.Assigned = csvRaw[5];
-            // b.Watching = csvRaw[6];
-
-
-            /*
-            
             try
             {
-                if (inputNum == 6)
-                {
-                    EnhancementFile eFile = new EnhancementFile("enhancements.csv");
-                    List<Ticket> enh = eFile.ReadFromFile2();
-
-                    
-                    
-                    // List<Ticket> TicketsList = new List<Ticket>();
-                    // StreamReader Reader = new StreamReader("enhancements.csv");
-                    //
-                    //
-                    // int i = 0;
-                    // while (!Reader.EndOfStream)
-                    // {
-                    //
-                    //     Reader.ReadLine();
-                    //Console.WriteLine(Reader.ReadLine());
-                    //CsvRecords.Add(Reader.ReadLine());
-                    // CsvRecordSplit = CsvRecords[i].Split(",");
-                    // Enhancement t = new Enhancement(CsvRecordSplit[0], CsvRecordSplit[1], CsvRecordSplit[2],
-                    //     CsvRecordSplit[3],
-                    //     CsvRecordSplit[4], CsvRecordSplit[5], CsvRecordSplit[6], CsvRecordSplit[7],
-                    //     Convert.ToDouble(CsvRecordSplit[8]), CsvRecordSplit[7],
-                    //     Convert.ToDouble(CsvRecordSplit[8]));
-                    //TicketsList.Add(t);
-
-
-
-
-                    //
-                    // Console.WriteLine($"{CsvRecords.Count}");
-                    // Reader.Close();
-                }
-
-
                 if (inputNum == 1)
                 {
                     Console.WriteLine("(B)ugs  |  (E)nhancements  |  (T)asks");
@@ -336,6 +180,106 @@ namespace TicketClasses
                     var file = new TaskFile("tasks.csv");
                     file.WriteToFile(task);
                 }
+
+                if (inputNum == 6)
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        line = reader.ReadLine();
+                        csvRaw = line.Split(",");
+
+                        //Console.WriteLine(csvRaw[1]);
+
+                        Bug b = new Bug();
+
+                        b.TicketId = csvRaw[0];
+                        b.Summary = csvRaw[1];
+                        b.Status = csvRaw[2];
+                        b.Priority = csvRaw[3];
+                        b.Submitter = csvRaw[4];
+                        b.Assigned = csvRaw[5];
+                        b.Watching = csvRaw[6];
+
+                        bugs.Add(b);
+                    }
+
+                    while (!reader2.EndOfStream)
+                    {
+                        line2 = reader2.ReadLine();
+                        csvRaw2 = line2.Split(",");
+
+                        //Console.WriteLine(csvRaw[1]);
+
+                        Task t = new Task();
+
+                        t.TicketId = csvRaw2[0];
+                        t.Summary = csvRaw2[1];
+                        t.Status = csvRaw2[2];
+                        t.Priority = csvRaw2[3];
+                        t.Submitter = csvRaw2[4];
+                        t.Assigned = csvRaw2[5];
+                        t.Watching = csvRaw2[6];
+
+                        tasks.Add(t);
+                    }
+
+
+                    while (!reader3.EndOfStream)
+                    {
+                        line3 = reader3.ReadLine();
+                        csvRaw3 = line3.Split(",");
+
+                        //Console.WriteLine(csvRaw[1]);
+
+                        Enhancement e = new Enhancement();
+
+                        e.TicketId = csvRaw3[0];
+                        e.Summary = csvRaw3[1];
+                        e.Status = csvRaw3[2];
+                        e.Priority = csvRaw3[3];
+                        e.Submitter = csvRaw3[4];
+                        e.Assigned = csvRaw3[5];
+                        e.Watching = csvRaw3[6];
+
+                        enhance.Add(e);
+                    }
+
+                    reader.Close();
+                    reader2.Close();
+                    reader3.Close();
+
+                    List<Ticket> tix = new List<Ticket>();
+
+                    foreach (var bug in bugs.Where(m => m.TicketId.Contains(query))) tix.Add(bug);
+                    foreach (var bug in bugs.Where(m => m.Summary.Contains(query))) tix.Add(bug);
+                    foreach (var bug in bugs.Where(m => m.Status.Contains(query))) tix.Add(bug);
+                    foreach (var bug in bugs.Where(m => m.Priority.Contains(query))) tix.Add(bug);
+                    foreach (var bug in bugs.Where(m => m.Submitter.Contains(query))) tix.Add(bug);
+                    foreach (var bug in bugs.Where(m => m.Assigned.Contains(query))) tix.Add(bug);
+                    foreach (var bug in bugs.Where(m => m.Watching.Contains(query))) tix.Add(bug);
+
+                    foreach (var enhancement in enhance.Where(m => m.TicketId.Contains(query))) tix.Add(enhancement);
+                    foreach (var enhancement in enhance.Where(m => m.Summary.Contains(query))) tix.Add(enhancement);
+                    foreach (var enhancement in enhance.Where(m => m.Status.Contains(query))) tix.Add(enhancement);
+                    foreach (var enhancement in enhance.Where(m => m.Priority.Contains(query))) tix.Add(enhancement);
+                    foreach (var enhancement in enhance.Where(m => m.Submitter.Contains(query))) tix.Add(enhancement);
+                    foreach (var enhancement in enhance.Where(m => m.Assigned.Contains(query))) tix.Add(enhancement);
+                    foreach (var enhancement in enhance.Where(m => m.Watching.Contains(query))) tix.Add(enhancement);
+
+
+                    foreach (var task in tasks.Where(m => m.TicketId.Contains(query))) tix.Add(task);
+                    foreach (var task in tasks.Where(m => m.Summary.Contains(query))) tix.Add(task);
+                    foreach (var task in tasks.Where(m => m.Status.Contains(query))) tix.Add(task);
+                    foreach (var task in tasks.Where(m => m.Priority.Contains(query))) tix.Add(task);
+                    foreach (var task in tasks.Where(m => m.Submitter.Contains(query))) tix.Add(task);
+                    foreach (var task in tasks.Where(m => m.Assigned.Contains(query))) tix.Add(task);
+                    foreach (var task in tasks.Where(m => m.Watching.Contains(query))) tix.Add(task);
+
+                    foreach (var a in tix)
+                    {
+                        Console.WriteLine(a.ToString());
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -343,7 +287,6 @@ namespace TicketClasses
                 Console.WriteLine(e);
                 throw;
             }
-            */
         }
     }
 }
