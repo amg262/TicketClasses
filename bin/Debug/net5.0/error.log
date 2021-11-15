@@ -37,3 +37,19 @@ File name: 'C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\bin\Debug\ne
    at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 44
 2021-11-01 08:47:42.5194|ERROR|TicketClasses.Program|System.NullReferenceException: Object reference not set to an instance of an object.
    at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 59
+2021-11-14 19:28:31.1290|ERROR|TicketClasses.Program|System.IO.FileNotFoundException: Could not find file 'C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\task.csv'.
+File name: 'C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\task.csv'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 185
+2021-11-14 19:32:21.2854|ERROR|TicketClasses.Program|System.IO.FileNotFoundException: Could not find file 'C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\task.csv'.
+File name: 'C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\task.csv'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at TicketClasses.Program.Main(String[] args) in C:\Users\Andy\RiderProjects\TicketClasses\TicketClasses\Program.cs:line 185

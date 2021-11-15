@@ -25,26 +25,8 @@ namespace TicketClasses
             Console.WriteLine("5) Task");
             Console.WriteLine("6) Search");
 
-            Console.WriteLine("Search Query: ");
-            string query = Console.ReadLine();
 
             int.TryParse(Console.ReadLine(), out var inputNum);
-
-            string[] csvRaw = null;
-            string[] csvRaw2 = null;
-            string[] csvRaw3 = null;
-
-            string line2;
-            string line3;
-            string line;
-            List<string> list = new List<string>();
-
-            List<Bug> bugs = new List<Bug>();
-            List<Task> tasks = new List<Task>();
-            List<Enhancement> enhance = new List<Enhancement>();
-            StreamReader reader = new StreamReader("ticket.csv");
-            StreamReader reader2 = new StreamReader("task.csv");
-            StreamReader reader3 = new StreamReader("enhancements.csv");
 
 
             try
@@ -183,6 +165,25 @@ namespace TicketClasses
 
                 if (inputNum == 6)
                 {
+                    Console.WriteLine("Search Query: ");
+                    string query = Console.ReadLine();
+
+
+                    string[] csvRaw = null;
+                    string[] csvRaw2 = null;
+                    string[] csvRaw3 = null;
+
+                    string line2;
+                    string line3;
+                    string line;
+                    List<string> list = new List<string>();
+
+                    List<Bug> bugs = new List<Bug>();
+                    List<Task> tasks = new List<Task>();
+                    List<Enhancement> enhance = new List<Enhancement>();
+                    StreamReader reader = new StreamReader("tickets.csv");
+                    StreamReader reader2 = new StreamReader("tasks.csv");
+                    StreamReader reader3 = new StreamReader("enhancements.csv");
                     while (!reader.EndOfStream)
                     {
                         line = reader.ReadLine();
